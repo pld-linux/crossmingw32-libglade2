@@ -115,6 +115,8 @@ mv -f $RPM_BUILD_ROOT%{_prefix}/bin/*.dll $RPM_BUILD_ROOT%{_dlldir}
 %{target}-strip -g -R.comment -R.note $RPM_BUILD_ROOT%{_libdir}/*.a
 %endif
 
+rm -rf $RPM_BUILD_ROOT%{_datadir}/{gtk-doc,xml}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
