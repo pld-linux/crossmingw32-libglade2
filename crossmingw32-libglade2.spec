@@ -85,6 +85,11 @@ Biblioteka DLL libglade dla Windows.
 %prep
 %setup -q -n libglade-%{version}
 
+# ensure to remove workaround below when obsolete
+grep -q glade_xml_construct_from_buffer glade/glade.def && exit 1
+# missing export
+echo -e '\tglade_xml_construct_from_buffer' >> glade/glade.def
+
 %build
 export PKG_CONFIG_PATH=%{_prefix}/lib/pkgconfig
 %{__libtoolize}
