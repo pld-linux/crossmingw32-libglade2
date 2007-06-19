@@ -2,28 +2,28 @@
 Summary:	libglade library - cross Mingw32 version
 Summary(pl.UTF-8):	Biblioteka do ładowania definicji interfejsu generowanego programem glade - wersja skrośna dla Mingw32
 Name:		crossmingw32-%{_realname}
-Version:	2.6.0
+Version:	2.6.1
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libglade/2.6/libglade-%{version}.tar.bz2
-# Source0-md5:	81d7b2b64871ce23a5fae1e5da0b1f6e
+# Source0-md5:	489be887b26b9973f77e2c6111ab7d5a
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	bison
-BuildRequires:	crossmingw32-atk >= 1.12.1
+BuildRequires:	crossmingw32-atk >= 1.18.0
 BuildRequires:	crossmingw32-gettext
-BuildRequires:	crossmingw32-gtk+2 >= 2.10.0
-BuildRequires:	crossmingw32-libxml2 >= 2.6.26
+BuildRequires:	crossmingw32-gtk+2 >= 2.10.13
+BuildRequires:	crossmingw32-libxml2 >= 2.6.29
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 2.0
 BuildRequires:	python-modules >= 2.0
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires:	crossmingw32-atk >= 1.12.1
-Requires:	crossmingw32-gtk+2 >= 2.10.0
-Requires:	crossmingw32-libxml2 >= 2.6.26
+Requires:	crossmingw32-atk >= 1.18.0
+Requires:	crossmingw32-gtk+2 >= 2.10.13
+Requires:	crossmingw32-libxml2 >= 2.6.29
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		no_install_post_strip	1
@@ -71,9 +71,9 @@ Statyczna biblioteka libglade (wersja skrośna mingw32).
 Summary:	DLL libglade library for Windows
 Summary(pl.UTF-8):	Biblioteka DLL libglade dla Windows
 Group:		Applications/Emulators
-Requires:	crossmingw32-atk-dll >= 1.12.1
-Requires:	crossmingw32-gtk+2-dll >= 2.10.0
-Requires:	crossmingw32-libxml2-dll >= 2.6.26
+Requires:	crossmingw32-atk-dll >= 1.18.0
+Requires:	crossmingw32-gtk+2-dll >= 2.10.13
+Requires:	crossmingw32-libxml2-dll >= 2.6.29
 Requires:	wine
 
 %description dll
