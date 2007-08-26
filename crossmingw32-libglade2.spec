@@ -1,16 +1,16 @@
-%define		_realname   libglade2
+%define		realname   libglade2
 Summary:	libglade library - cross Mingw32 version
 Summary(pl.UTF-8):	Biblioteka do ładowania definicji interfejsu generowanego programem glade - wersja skrośna dla Mingw32
-Name:		crossmingw32-%{_realname}
-Version:	2.6.1
+Name:		crossmingw32-%{realname}
+Version:	2.6.2
 Release:	1
-License:	LGPL
+License:	LGPL v2+
 Group:		Development/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libglade/2.6/libglade-%{version}.tar.bz2
-# Source0-md5:	489be887b26b9973f77e2c6111ab7d5a
+# Source0-md5:	da4f9d1c6cd1337f6ef5e2db768d8557
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
 BuildRequires:	crossmingw32-atk >= 1.18.0
 BuildRequires:	crossmingw32-gettext
@@ -30,7 +30,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target			i386-mingw32
 %define		target_platform 	i386-pc-mingw32
-%define		arch			%{_prefix}/%{target}
 
 %define		_sysprefix		/usr
 %define		_prefix			%{_sysprefix}/%{target}
@@ -107,7 +106,6 @@ export PKG_CONFIG_PATH=%{_prefix}/lib/pkgconfig
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/libglade/2.0
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -127,7 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README
+%doc AUTHORS ChangeLog NEWS README
 %{_libdir}/libglade-2.0.dll.a
 %{_libdir}/libglade-2.0.la
 %{_pkgconfigdir}/libglade-2.0.pc
