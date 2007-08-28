@@ -17,7 +17,7 @@ BuildRequires:	crossmingw32-gettext
 BuildRequires:	crossmingw32-gtk+2 >= 2.10.13
 BuildRequires:	crossmingw32-libxml2 >= 2.6.29
 BuildRequires:	libtool
-BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig >= 1:0.15
 BuildRequires:	python >= 2.0
 BuildRequires:	python-modules >= 2.0
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -90,7 +90,7 @@ grep -q glade_xml_construct_from_buffer glade/glade.def && exit 1
 echo -e '\tglade_xml_construct_from_buffer' >> glade/glade.def
 
 %build
-export PKG_CONFIG_PATH=%{_prefix}/lib/pkgconfig
+export PKG_CONFIG_LIBDIR=%{_prefix}/lib/pkgconfig
 %{__libtoolize}
 %{__glib_gettextize}
 %{__aclocal} -I m4
