@@ -2,12 +2,12 @@
 Summary:	libglade library - cross Mingw32 version
 Summary(pl.UTF-8):	Biblioteka do ładowania definicji interfejsu generowanego programem glade - wersja skrośna dla Mingw32
 Name:		crossmingw32-%{realname}
-Version:	2.6.2
+Version:	2.6.3
 Release:	1
 License:	LGPL v2+
 Group:		Development/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libglade/2.6/libglade-%{version}.tar.bz2
-# Source0-md5:	da4f9d1c6cd1337f6ef5e2db768d8557
+# Source0-md5:	1c359860b1a0f369f0b6e3f96fd985c2
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.9
@@ -84,11 +84,6 @@ Biblioteka DLL libglade dla Windows.
 
 %prep
 %setup -q -n libglade-%{version}
-
-# ensure to remove workaround below when obsolete
-grep -q glade_xml_construct_from_buffer glade/glade.def && exit 1
-# missing export
-echo -e '\tglade_xml_construct_from_buffer' >> glade/glade.def
 
 %build
 export PKG_CONFIG_LIBDIR=%{_prefix}/lib/pkgconfig
