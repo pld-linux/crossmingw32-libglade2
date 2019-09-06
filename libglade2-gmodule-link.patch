@@ -1,0 +1,12 @@
+--- libglade-2.6.4/configure.in~	2009-03-17 14:19:01.000000000 +0000
++++ libglade-2.6.4/configure.in	2014-12-31 18:18:28.589184305 +0000
+@@ -46,7 +46,8 @@
+   libxml-2.0 >= required_libxml_version dnl
+   atk >= required_atk_version dnl
+   gtk+-2.0 >= required_gtk_version dnl
+-  glib-2.0 >= required_glib_version])
++  glib-2.0 >= required_glib_version dnl
++  gmodule-2.0 >= required_glib_version])
+ 
+ AC_MSG_CHECKING([for native Win32])
+ case "$host" in

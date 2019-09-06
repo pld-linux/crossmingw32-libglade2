@@ -1,0 +1,11 @@
+--- libglade-2.6.4/configure.in.orig	2019-09-06 15:32:03.258675443 +0200
++++ libglade-2.6.4/configure.in	2019-09-06 16:01:31.702428295 +0200
+@@ -15,8 +15,6 @@
+ 
+ AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2])
+ 
+-GNOME_COMMON_INIT
+-
+ if test "$enable_debug" != "no"; then
+   AC_DEFINE([DEBUG],[1],[enable use of LIBGLADE_DEBUG environment variable])
+ fi
